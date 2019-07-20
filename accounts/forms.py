@@ -1,14 +1,12 @@
 from django import forms
-from .models import Profile,Company
-
-class ProfileForm(forms.ModelForm):
-    class Meta :
-        model = Profile
-        fields = ("user","Email","company","Phone","SSN","Address")
+from django.contrib.auth.models import User
 
 
-class CompanyForm(forms.ModelForm):
-    class Meta :
-        model = Company
-        fields = ("Name")
+class UserForm(forms.ModelForm):
+
+    class Meta:
+        model=User
+        fields = "__all__"
+
+
 
